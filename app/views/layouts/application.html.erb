@@ -1,28 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Todo App Backbone Rails - from codeschool bb lesson</title>
-  <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/css/foundation.min.css">
-  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-  <%= stylesheet_link_tag    "application", media: "all" %>
-  
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-  <div class="row">
-    <div class="row">
-      <header id="add-todo" class="large-6 medium-6 small-6 large-centered medium-centered small-centered columns">
-        <input type="text" placeholder="Type new todo here ..." />
-        <input type="button" value="Add Todo" id="submit" class="button tiny" />
-        <span class="alert round label" style="display:none;">Description Required!</span>
-      </header>
-    </div>
-    <div class="large-6 medium-6 small-6 large-centered medium-centered small-centered columns main">
-      <%= yield %>
-    </div>
-  </div>
-
-  <%= javascript_include_tag "application" %>
-</body>
+  <head>
+    <title>Todo App Backbone Rails - from codeschool bb lesson</title>
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.1.1/css/foundation.min.css">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
