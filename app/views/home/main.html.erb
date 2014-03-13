@@ -1,11 +1,17 @@
 <div class="row">
   <header id="add-todo" class="large-6 medium-6 small-6 large-centered medium-centered small-centered columns">
     <div class="logo">
-      <h2 class="text-centered">My Todo List</h2>
+      <h2 class="text-centered"><%= @title %></h2>
     </div>
     <input type="text" placeholder="Type new todo here ..." />
-    <input type="button" value="Add Todo" id="submit" class="button tiny" />
-    <span class="alert round label" style="display:none;">Description Required!</span>
+    <div class="row">
+      <div class="large-8 medium-8 small-8 columns">
+        <input type="button" value="Add Todo" id="submit" class="button tiny" />
+      </div>
+      <div class="large-4 medium-4 small-4 columns">
+        <span class="alert round label" style="display:none;">Description Required!</span>
+      </div>
+    </div>
   </header>
 </div>
 <div class="row">
