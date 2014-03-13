@@ -17,6 +17,7 @@
 //= require app/models/todo
 //= require app/collections/todo-list
 //= require app/views/todos
+//= require app/views/todo-list-view
 //= require app/views/todo-input-view
 //= require todos-main
 //= require_self
