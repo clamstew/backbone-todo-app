@@ -5,7 +5,7 @@
     events: {
       'click span': 'renderEdit',
       'change input[type="checkbox"]': 'toggleStatus',
-      'click a.destroy': 'destroy',
+      'click i.destroy': 'destroy',
       'blur input[type="text"]': 'saveAndRerender',
       'keypress input[type="text"]': 'enterToSaveAndReRender'
     },
@@ -20,8 +20,11 @@
     template: _.template('<h3 class="<%= status %>">' + 
       '<input type=checkbox ' + 
       '<% if(status === "complete") print ("checked") %>/>' +
-                         '<span><%= description %></span>' +
-                         '<a href="#" class="destroy">x</a></h3>'),
+         '<span><%= description %></span>' +
+         '<i class="fa fa-arrow-circle-right"></i>' + 
+         '<i class="fa fa-minus-circle destroy"></i>' + 
+         // '<a href="#" class="destroy">x</a>' + 
+         '</h3>'),
     templateEdit: _.template('<h3 class="<%= status %>">' + 
       '<input type=text value="' +
       '<%= description %>' + 
@@ -33,7 +36,6 @@
       return this;
     },
     renderEdit: function() {
-      console.log('This will render the edit view!');
       this.$el.html(this.templateEdit(this.model.toJSON()));
       this.$el.find('input').focus();
     },
@@ -46,8 +48,8 @@
         this.saveAndRerender();
       }
     },
-    destroy: function(event) {
-      event.preventDefault();
+    destroy: function() {
+      // event.preventDefault();
       this.model.destroy();
     },
     remove: function() {
