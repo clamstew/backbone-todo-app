@@ -21,9 +21,8 @@
       '<input type=checkbox ' + 
       '<% if(status === "complete") print ("checked") %>/>' +
          '<span><%= description %></span>' +
-         '<i class="fa fa-arrow-circle-right"></i>' + 
+         '<i class="fa fa-arrow-circle-right show"></i>' + 
          '<i class="fa fa-minus-circle destroy"></i>' + 
-         // '<a href="#" class="destroy">x</a>' + 
          '</h3>'),
     templateEdit: _.template('<h3 class="<%= status %>">' + 
       '<input type=text value="' +
@@ -49,7 +48,6 @@
       }
     },
     destroy: function() {
-      // event.preventDefault();
       this.model.destroy();
     },
     remove: function() {
