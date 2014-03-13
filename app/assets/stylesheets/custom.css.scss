@@ -1,12 +1,13 @@
+// add in some bootstrap goodness
+.text-centered { text-align: center; }
+
+// main custom styles
 body {
   background: image-url("green_cup.png");
 }
 
-header, .main {
-  border: 2px solid green;
-  background: white;
-}
 header {
+  @extend .main;
   padding: 10px;
   span.label {
     float: right;
@@ -14,19 +15,30 @@ header {
   }
 }
 
+.main {
+  border: 2px solid green;
+  background: white;
+}
 article {
   background: white;
   border-bottom: 1px solid #ccc;
   span {
     display: inline-block;
-    margin-left: 10px;
+    margin: 10px 0 0 10px;
     cursor: pointer;
   }
   i {
     float: right;
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px 0 0 3px;
+    &.destroy:hover { color: red; }
   }
   .complete span {
     color: #bbb;
     text-decoration: line-through;
+  }
+  input[type="text"] {
+    margin-top: 15px;
   }
 }
