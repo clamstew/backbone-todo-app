@@ -1,0 +1,32 @@
+body {
+  background: image-url("green_cup.png");
+}
+
+header, .main {
+  border: 2px solid green;
+  background: white;
+}
+header {
+  padding: 10px;
+  span.label {
+    float: right;
+    margin-top: 10px;
+  }
+}
+
+article {
+  background: white;
+  border-bottom: 1px solid #ccc;
+  span {
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  a.destroy {
+    float: right;
+  }
+  .complete span {
+    color: #bbb;
+    text-decoration: line-through;
+  }
+}
