@@ -8,7 +8,7 @@
       this.addAll();
     },
     addAll: function() {
-      this.$el.html('');
+      this.$el.empty();
       this.collection.forEach(this.addOne, this);
       return this;
     },
