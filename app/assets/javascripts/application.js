@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
+//= require utils
 //= require app/models/todo
 //= require app/collections/todo-list
 //= require app/views/todo-item-view
