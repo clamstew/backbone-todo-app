@@ -43,9 +43,7 @@
       this.render();
     },
     enterToSaveAndReRender: function(e) {
-      if ( e.which === 13 ) {
-        this.saveAndRerender();
-      }
+      if ( e.which === 13 ) { this.saveAndRerender(); }
     },
     destroy: function() {
       this.model.destroy();

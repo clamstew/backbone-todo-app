@@ -17,9 +17,7 @@
       }
     },
     enterAddOne: function(e) {
-      if ( e.which === 13 ) {
-        this.addOne(e);
-      }
+      if ( e.which === 13 ) { this.addOne(e); }
     },
     hideAlerts: function() {
       this.$el.find('span.label').hide();
