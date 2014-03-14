@@ -1,7 +1,21 @@
 (function() {
+  // Make Underscore Templates for view
+  var todoTemplateHtml = $('#templates .todo-item').html()
+    , todoTemplate = _.template(todoTemplateHtml)
+    , todoEditTemplateHtml = $('#templates .todo-item-edit').html()
+    , todoEditTemplate = _.template(todoEditTemplateHtml)
+  ;
+
   window.TodoView = Backbone.View.extend({
     tagName: 'article',
     className: 'todo',
+    template: todoTemplate,
+    templateEdit: todoEditTemplate,
+    initialize: function() {
+      this.model.on('change', this.render, this);
+      this.model.on('destroy', this.remove, this);
+      this.model.on('hide', this.remove, this);
+    },
     events: {
       'click span': 'renderEdit',
       'change input[type="checkbox"]': 'toggleStatus',
@@ -9,27 +23,9 @@
       'blur input[type="text"]': 'saveAndRerender',
       'keypress input[type="text"]': 'enterToSaveAndReRender'
     },
-    initialize: function() {
-      this.model.on('change', this.render, this);
-      this.model.on('destroy', this.remove, this);
-      this.model.on('hide', this.remove, this);
-    },
     toggleStatus: function() {
       this.model.toggleStatus();
     },
-    template: _.template('<h3 class="<%= status %>">' + 
-      '<input type=checkbox ' + 
-      '<% if(status === "complete") print ("checked") %>/>' +
-         '<span><%= description %></span>' +
-         '<i class="fa fa-arrow-circle-right show"></i>' + 
-         '<i class="fa fa-minus-circle destroy"></i>' + 
-         '</h3>'),
-    templateEdit: _.template('<h3 class="<%= status %>">' + 
-      '<input type=text value="' +
-      '<%= description %>' + 
-      '" />' +
-      '</h3>'
-      ),
     render: function() {
       this.$el.html(this.template(this.model.toJSON()));
       return this;
