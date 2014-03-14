@@ -1,5 +1,6 @@
 // add in some bootstrap goodness
 .text-centered { text-align: center; }
+$fdn-btn-blue: #008cba;
 
 // main custom styles
 body {
@@ -33,6 +34,7 @@ article {
     display: inline-block;
     margin: 10px 0 0 3px;
     &.destroy:hover { color: red; }
+    &.show:hover { color: $fdn-btn-blue; }
   }
   .complete span {
     color: #bbb;
