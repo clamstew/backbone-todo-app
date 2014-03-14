@@ -1,0 +1,7 @@
+<script type="text/javascript">
+  window.g = {
+    <% if user_signed_in? %>
+      user: <%= raw current_user.to_json %>
+    <% end %>
+  };
+</script>
