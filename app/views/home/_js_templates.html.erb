@@ -1,0 +1,27 @@
+<div id="templates">
+
+  <script class="todo-item" type="text/template">
+    <h3 class="{{= status }} row">
+      <div class="large-1 medium-1 small-1 columns">
+        <input type="checkbox" 
+          {{ if(status === "complete") { }} 
+            {{= "checked" }}
+          {{ } }} />
+      </div>
+      <div class="large-8 medium-8 small-8 columns">
+        <span>{{= description }}</span>
+      </div>
+      <div class="large-3 medium-3 small-3 columns">
+        <i class="fa fa-arrow-circle-right show"></i>
+        <i class="fa fa-minus-circle destroy"></i> 
+      </div>
+    </h3>
+  </script>
+
+  <script class="todo-item-edit" type="text/template">
+    <h3 class="{{= status }}">
+      <input type=text value="{{= description }}" />
+    </h3>
+  </script>
+
+</div>
