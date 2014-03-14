@@ -1,6 +1,6 @@
 (function() {
   window.TodoItem = Backbone.Model.extend({
-    urlRoot: "/todos",
+    urlRoot: "/api/todos",
     defaults: {
       description: 'Empty todo ...',
       status: 'incomplete'

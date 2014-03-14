@@ -1,6 +1,6 @@
 (function() {
   window.TodoList = Backbone.Collection.extend({
-    url: '/todos',
+    url: '/api/todos',
     model: TodoItem,
     initialize: function() {
       this.on('remove', this.hideModel);
