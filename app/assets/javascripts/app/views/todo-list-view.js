@@ -1,5 +1,5 @@
 (function() {
-    window.TodoListView = Backbone.View.extend({
+  window.TodoListView = Backbone.View.extend({
     initialize: function() {
       this.collection.on('add', this.addOne, this);
       this.collection.on('reset', this.addAll, this);
